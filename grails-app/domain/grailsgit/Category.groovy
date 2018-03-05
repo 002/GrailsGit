@@ -4,7 +4,7 @@ class Category {
 
     String name
 
-    static belongsTo = [site:Site]
+    static belongsTo = [site: Site]
 
     static constraints = {
     }
