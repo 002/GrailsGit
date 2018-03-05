@@ -2,6 +2,8 @@ package grailsgit
 
 class GrailGitController {
     SiteService siteService
+    MyCategoryService myCategoryService
+    CategoryService categoryService
 
     def index() {
 
@@ -15,7 +17,7 @@ class GrailGitController {
                 throw new IllegalArgumentException("Se deben completar los campos user y password")
             } else {
                 loginService(userName, password)
-                redirect 'sites'
+                redirect action: 'sites'
             }
         } catch (InvalidUserException e) {
             e.printStackTrace()
@@ -26,6 +28,16 @@ class GrailGitController {
             flash.error = e.getMessage()
             redirect action: 'index'
         }
+    }
+
+
+    def showCategory(Long id) {
+        myCategoryService.updateVisits(categoryService.get(id))
+        respond categoryService.get(id)
+    }
+
+    def showCategories(Long id) {
+        respond siteService.get(id)
     }
 
     def loginService(String userName, String password) {

@@ -18,8 +18,11 @@ class BootStrap {
         site.save()
 
         Category cat = new Category(name: 'Coso', visits: 0 , siteId: 1)
-
+        cat.save()
         cat = new Category(name: 'Algo', visits: 0 , siteId: 1)
+        cat.save()
+        cat = new Category(name: 'Otro', visits: 0 , siteId: 2)
+        cat.save()
     }
     def destroy = {
     }
