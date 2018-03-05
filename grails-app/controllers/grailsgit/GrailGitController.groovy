@@ -1,10 +1,10 @@
 package grailsgit
 
-
-
 class GrailGitController {
+    SiteService siteService
 
     def index() {
+
     }
 
     def login(){
@@ -39,5 +39,12 @@ class GrailGitController {
         }
 
     }
+
+    def sites(){
+        ArrayList<Site> sites = siteService.list()
+        sites.each {s -> println s.active}
+        [sites: sites]
+    }
+
 
 }
