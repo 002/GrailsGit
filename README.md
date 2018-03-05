@@ -1,1 +1,1 @@
-# GrailsGit
+# GrailGit
