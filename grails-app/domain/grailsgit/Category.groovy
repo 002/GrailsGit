@@ -6,7 +6,7 @@ class Category {
     String urlImage
     int visits
 
-    static belongsTo = [site:Site]
+    static belongsTo = [site: Site]
 
     static constraints = {
         name nullable: false, blank: false
